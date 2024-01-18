@@ -10,11 +10,11 @@ import { publicProvider } from 'wagmi/providers/public'
 
 const alchemyId = process.env.ALCHEMY_ID
 const { chains, provider, webSocketProvider } = configureChains(
-  [goerli],
+  [mainnet],
   [alchemyProvider({ apiKey: process.env.ALCHEMY_ID, priority: 0 }),publicProvider({ priority: 1 })],
   )
 
-const chainList = [goerli]
+const chainList = [mainnet]
 
 export const client = createClient({
   connectors: [new MetaMaskConnector({ chains }),

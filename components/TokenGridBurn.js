@@ -35,7 +35,7 @@ async function GetTokenBurnData(productPage) {
             let type = "";
             
              
-              image.src = "nftimg.png";
+              image.src = "Toy_avatar.webp";
             
             
 
@@ -44,7 +44,7 @@ async function GetTokenBurnData(productPage) {
             let title = document.createElement("h3");
             title.classList.add('nft-title');
             
-            title.innerText = "Top Drawer Merch Club #"+customName;
+            title.innerText = tokenName.title;
             
             let buttonParent = document.createElement("div");
             buttonParent.classList.add('buttonParent');
@@ -87,7 +87,7 @@ async function GetTokenBurnData(productPage) {
           const headingParagraph = document.createElement("p");
           headingParagraph.classList.add('paragraph');
           headingParagraph.classList.add('section-paragraph');
-          headingParagraph.innerText = "Select a Top Drawer Merch Club token below to begin the claim process. Please note that only one token can be claimed at a time."
+          headingParagraph.innerText = "Select an Invisible Friends Physical Toy token below to begin the claim process. Please note that only one token can be claimed at a time."
           sectionHeadingParent.appendChild(headingText);
           sectionHeadingParent.appendChild(headingParagraph);
 

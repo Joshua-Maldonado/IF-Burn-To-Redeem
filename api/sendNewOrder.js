@@ -4,7 +4,7 @@ export default async function sendNewOrder(order) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         params:  order ,
-        body: JSON.stringify( order )  
+        body: order   
     };
    
 

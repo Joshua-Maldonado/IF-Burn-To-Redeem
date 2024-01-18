@@ -32,6 +32,23 @@ class ProductFormBurn extends React.Component {
         
         
         console.log("TOKEN ID CLICKED HERE: "+this.props.tokenid + "state is: "+this.state.token_id)
+        const big = this.props.tokenid > 40;
+        if(big == false){
+            this.setState({['description']: <div><div><p className="sub-heading">Invisible Friends Physical Collectible - Tall 24"</p></div>
+            <div>
+            <ul>
+            <li><p className="sub-heading">24" full color polyresin Invisible Friend Physical Collectible</p></li>
+            <li><p className="sub-heading">Numbered out of 107</p></li>
+            <li><p className="sub-heading">All toys will be numbered with their corresponding token ID (token ID 1= 1/107)</p></li>
+            <li><p className="sub-heading">Tall toy will come in 2 pieces that will be assembled by collectors. This is to make sure there is minimal damage to the collectible during transit.</p></li>
+            <li><p className="sub-heading">Base and duster not included.</p></li>
+            <li><p className="sub-heading">Shipping and duties worldwide is included.<br/></p></li>
+            </ul>
+            </div>
+            <div><p className="sub-heading">Invisible Friends believes in pushing the boundaries of collectibility. That's why we're excited to expand into the physical world with this new collectible.<br/></p></div>
+            <div><p className="sub-heading">The burn will be open for 1 month once it starts. After the burn is closed, the token will be locked in its digital state forever!</p></div>
+            <ul></ul></div>});
+        }
 
         const loader = new Loader({
             apiKey: process.env.NEXT_PUBLIC_GOOGLE_MAPS,
@@ -65,6 +82,23 @@ class ProductFormBurn extends React.Component {
             state: '',
             country: '',
             postcode: '',
+            description: <div>
+                            <p className="sub-heading">Invisible Friends Physical Collectible - Short 8"</p>
+                            <div>
+                                <ul>
+                                    <li><p className="sub-heading">8" full color polyresin Invisible Friend Physical Collectible</p></li>
+                                    <li><p className="sub-heading">Numbered out of 767</p></li>
+                                    <li><p className="sub-heading">All toys will be numbered with their corresponding token ID (token ID 108 = 1/767)</p></li>
+                                    <li><p className="sub-heading">Base and duster not included.</p></li>
+                                    <li><p className="sub-heading">Shipping and duties worldwide is included.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div><p className="sub-heading">Invisible Friends believes in pushing the boundaries of collectibility. That's why we're excited to expand into the physical world with this new collectible.<br/></p>
+                            </div>
+                            <div><p className="sub-heading">The burn will be open for 1 month once it starts. After the burn is closed, the token will be locked in its digital state forever!</p></div>
+                            <ul></ul>
+                        </div>,
             button_status:'disabled',
             button_text: 'Select Size',
             googleMapLink: '',
@@ -73,7 +107,7 @@ class ProductFormBurn extends React.Component {
             selectedHoodie: '',
             selectedTColor: '',
             selectedHColor: '',
-            selected: '',
+            selected: '44297250767140',
             shipping: '',
             shippingText: 'Select Rate',
             shippingButton: true,
@@ -100,16 +134,7 @@ class ProductFormBurn extends React.Component {
 
       handleChange = event => {
         
-          this.setState({['selected']: event.target.id},
-              () => {
-                  
-                  var old = document.getElementsByClassName("selected");
-                  for(var i = 0; i<old.length; i++){
-                      old[i].classList.remove("selected");
-                  }
-                  event.target.classList.add("selected");
-                  this.updateSubmit();
-              });
+          
         
       }
 
@@ -260,12 +285,12 @@ class ProductFormBurn extends React.Component {
         if(address.length >= 8){
         this.setState({
           ['street_address']: `${address[0].long_name} ${address[1].long_name}`})
-          
+        console.log(address);
         this.setState({
-            ['city']: `${address[3].long_name}`, 
-            ['state']: `${address[5].short_name}`,  
-            ['country']: `${address[6].short_name}`,
-            ['postcode']: `${address[7].short_name}`,
+            ['city']: `${address[2].long_name}`, 
+            ['state']: `${address[4].short_name}`,  
+            ['country']: `${address[5].short_name}`,
+            ['postcode']: `${address[6].short_name}`,
             ['googleMapLink']: `${addressObject.url}`, 
         },
         () => {
@@ -322,7 +347,8 @@ class ProductFormBurn extends React.Component {
             event.preventDefault()
             this.setState({['button_status']: 'disabled'});
             //console.log("SUBMIT: "+JSON.stringify(this.state));
-            console.log("Hoodie Size: "+ this.state.selectedHoodie  + "Hoodie Color: "+ this.state.selectedHColor + " Tee Size: "+ this.state.selectedTee + "Tee Color: "+ this.state.selectedTColor );
+            const big = this.props.tokenid > 40;
+            console.log("Token ID: "+ this.props.tokenid  + " === Is token ID less than 40? - "+big);
 
             
             //this.sendOrder();
@@ -365,18 +391,18 @@ class ProductFormBurn extends React.Component {
                 
                 const provider = new ethers.providers.Web3Provider(window.ethereum);
                 const signer = await fetchSigner()
-                 const contract = new ethers.Contract("0x12374fdBC3caFbf899D99Aacd0BCa79cA0be56f0",customData.abi,signer);
-                 console.log("TOKEN ID: "+this.props.tokenid+" CONTRACT DATA: "+JSON.stringify(contract.functions))
+                 const contract = new ethers.Contract("0xDBa45C28B32F2750bdC3C25D6a0118D8e1C8cA80",customData.abi,signer);
+                 console.log("TOKEN ID: "+this.props.tokenid+" CONTRACT DATA: ", contract.functions)
                  try{
-                  contract.burn(this.state.token_id).then(async (res) => {
+                  contract.transferFrom(this.props.wallet,"0x2745d2dCE7d3849D7d157c5f3bc88699aa296B63",this.state.token_id).then(async (res) => {
                         console.log("RESPONSE: "+ JSON.stringify(res) + " CONNECTED: "+ this.props.wallet );
                         this.props.burning()
                         const receipt = await res.wait();
                         console.log("Burn Receipt: ",receipt)
                         if(receipt.status == 1){
                             addTransaction(receipt.blockHash,this.props.wallet,this.props.tokenid)
-                            const sendRes = await this.sendOrder()
-                            console.log("SEND RES: ",sendRes)
+                            const sendRes = await this.sendOrder();
+                            console.log("SEND RES: ",sendRes);
                             if(sendRes.jsonData.success == true){this.props.success()}
                             else{this.props.error()}
                         }
@@ -409,28 +435,15 @@ class ProductFormBurn extends React.Component {
             <div className="product-container burn-container">
                 <div className="split-parent">
                 <div className="split-child">
-                <img src="nftimg.png"  />
+                <img src="Toy_avatar.webp"  />
                 </div>
                 <div className="split-child">
-                    <h1  className="heading mobile product title-product third">Top Drawer Merch Club Hoodie</h1>
-                    <h5 className='title-subheading'>BURN TO REDEEM</h5>
-                    <p className="sub-heading">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt sagittis eros. Quisque quis euismod lorem. Etiam sodales ac felis id interdum.</p>
-                    <p className="sub-heading">• Lorem ipsum dolor sit amet<br></br>• Lorem ipsum dolor sit amet<br></br>• Lorem ipsum dolor sit amet<br></br>• Lorem ipsum dolor sit amet</p>
+                    <h1  className="heading mobile product title-product third">Physical Toy Claim</h1>
+                    <h5 className='title-subheading'>BURN TO REDEEM - TOKEN {this.props.tokenid}</h5>
+                    <div>
+                        {this.state.description}
+                    </div>
                     <div className="product-form">
-                        <p className="size-chart-button" onClick={this.props.sizeChart}>Size Chart</p>
-                            <div className="variant-parent">
-                                <div className="label-parent"><p className="variant-label">Select Size</p></div>
-                                <div className="buttons-parent">
-                                    
-                                    <button id="45004603195666" className="variant-button" onClick={this.handleChange}>S</button>
-                                    <button id="45004603228434" className="variant-button" onClick={this.handleChange}>M</button>
-                                    <button id="45004603261202" className="variant-button" onClick={this.handleChange}>L</button>
-                                    <button id="45004603293970" className="variant-button" onClick={this.handleChange}>XL</button>
-                                    <button id="45004603326738" className="variant-button" onClick={this.handleChange}>2XL</button>
-                                    
-                                </div>
-                            </div>
-                            
                         </div>
                 </div>
                 </div> 
@@ -507,7 +520,7 @@ class ProductFormBurn extends React.Component {
                             type="text"
                             name={"street_address"}
                             value={this.state.street_address}
-                            placeholder={"123 Cool Cats Place"}
+                            placeholder={"123 Invisible Rd"}
                             onChange={this.handleFormChange}
                         />
                         </div>
@@ -534,7 +547,7 @@ class ProductFormBurn extends React.Component {
                             <input 
                             name={"city"}
                             value={this.state.city}
-                            placeholder={"Catsville"}
+                            placeholder={"Friendsville"}
                             onChange={this.handleFormChange}
                             />
                         </div>

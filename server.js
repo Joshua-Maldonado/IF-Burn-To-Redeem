@@ -21,7 +21,7 @@ const handle = app.getRequestHandler()
 
 const config = {
     apiKey: process.env.ALCHEMY_ID,
-    network: alch.Network.ETH_GOERLI,
+    network: alch.Network.ETH_MAINNET,
   };
 
 const web3 = new alch.Alchemy(config);
@@ -182,13 +182,13 @@ app.prepare().then(() => {
 
 
     const tokens = await web3.nft.getNftsForOwner(req.params.address,{
-      contractAddresses: ["0x12374fdBC3caFbf899D99Aacd0BCa79cA0be56f0"]
+      contractAddresses: ["0xDBa45C28B32F2750bdC3C25D6a0118D8e1C8cA80"]
     })
 
     if(tokens.ownedNfts){
         
         
-        console.log("DT RESPONSE: " + JSON.stringify(tokens))
+        console.log("DT RESPONSE: --- " + JSON.stringify(tokens))
         
           res.status(200).send(JSON.stringify(tokens))
       
@@ -312,13 +312,17 @@ app.prepare().then(() => {
 })
 
 server.post('/neworder', jsonParser, async function(req, res) {
+  var sendContent = { "content": req.body, "code": 412234};
+  console.log(sendContent);
   var origin = req.get('sec-fetch-site');
     if(origin == "same-origin"){
 
-  await fetch('https://hooks.zapier.com/hooks/catch/5494090/3uxwcm0/', {
+  await fetch('https://webhooks.runalloy.com/654034eec6ca7bd010a83087', {
         method: 'POST',
-        body: JSON.stringify({ data: req.body, code: 248885767729}),
-       
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(sendContent),
       })
          .then((response) => response.json())
          .then((data) => {
@@ -330,7 +334,7 @@ server.post('/neworder', jsonParser, async function(req, res) {
          .catch((err) => {
             console.log(err.message);
             //this.props.errorFunction();
-            res.status(400).send(JSON.stringify({success: false, data: data}))
+            res.status(400).send(JSON.stringify({success: false}))
          });
         }
         else{

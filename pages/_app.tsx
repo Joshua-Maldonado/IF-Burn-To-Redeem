@@ -36,8 +36,9 @@ function App() {
     <WagmiConfig client={client}>
       <ConnectKitProvider>
         <NextHead>
-          <title>Top Drawer Merch Web3 Demo</title>
+          <title>Invisible Friends Physical Product Claim</title>
           <link rel="shortcut icon" href="favicon.png" />
+          <link rel="stylesheet" href="https://use.typekit.net/kfm8mdi.css"></link>
         </NextHead>
         <style jsx global>{`
         :root {
@@ -52,6 +53,9 @@ function App() {
           font-family: ${PtRootUi.style.fontFamily} !important;
           font-weight: 500;
         }
+        .main-content h1, h2, h3, h4, h5 {
+          font-family: "fatfrank", sans-serif !important;
+      }
       `}</style>
         <Script
               id="googlemaps"

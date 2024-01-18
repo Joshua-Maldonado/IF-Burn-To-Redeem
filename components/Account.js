@@ -53,13 +53,57 @@ export default function Account() {
     }, [activeConnector])
 
   
-  function ProductPageClaim(tokenid){
-    setStatus(
-      <div>
-        <ProductPage tokenid={tokenid} error={errorFunction} wallet={address}></ProductPage>
-      </div>
-    );
-  }
+  // function ProductPageClaim(tokenid){
+  //   setStatus(
+  //     <div>
+  //       <ProductPage tokenid={tokenid} error={errorFunction} wallet={address}></ProductPage>
+  //     </div>
+  //   );
+  // }
+
+  // function verifyWallet(){
+
+  //   var thisAddress = address
+  //    console.log(" Function account: "+ address)
+     
+    
+  //    setStatus(
+  //      <div>
+  //        <VerifyAccout address={address} approve={validWallet} deny={denyWallet}></VerifyAccout>
+  //      </div>
+  //    );
+     
+  //  }
+
+//   function TokenSelectClaim() {
+  
+//     setStatus(
+//       <div>
+//                 <DisplayTokens productPage={ProductPageClaim} error={errorFunction} account={ address }></DisplayTokens>
+//         </div>
+//     );
+// }
+// function validWallet(){
+//   setStatus(
+//     <div className='index-section-subcontent'>
+//                       <h2 className='heading-text h2'>Successful Verification</h2>
+//                       <p className='paragraph'>Looks like you own one or more Top Drawer Merch Club NFTs. Click the button below to shop the members-only Top Drawer Shop.</p>
+//                       <button className='cta button big-btn'>Shop Now</button>
+//               </div>
+//   );
+// }
+// function denyWallet(){
+//   setStatus(
+//     <div className='index-section-subcontent'>
+//                       <h2 className='heading-text h2'>Denied</h2>
+//                       <p className='paragraph'>Connect a different wallet to try again</p>
+                      
+//               </div>
+//   );
+// }
+ 
+
+  
   function ProductPagetoBurn(tokenid){
     setStatus(
       <div>
@@ -68,47 +112,9 @@ export default function Account() {
     );
   }
 
-   function verifyWallet(){
-
-   var thisAddress = address
-    console.log(" Function account: "+ address)
-    
    
-    setStatus(
-      <div>
-        <VerifyAccout address={address} approve={validWallet} deny={denyWallet}></VerifyAccout>
-      </div>
-    );
-    
-  }
 
-function TokenSelectClaim() {
-  
-    setStatus(
-      <div>
-                <DisplayTokens productPage={ProductPageClaim} error={errorFunction} account={ address }></DisplayTokens>
-        </div>
-    );
-}
-function validWallet(){
-  setStatus(
-    <div className='index-section-subcontent'>
-                      <h2 className='heading-text h2'>Successful Verification</h2>
-                      <p className='paragraph'>Looks like you own one or more Top Drawer Merch Club NFTs. Click the button below to shop the members-only Top Drawer Shop.</p>
-                      <button className='cta button big-btn'>Shop Now</button>
-              </div>
-  );
-}
-function denyWallet(){
-  setStatus(
-    <div className='index-section-subcontent'>
-                      <h2 className='heading-text h2'>Denied</h2>
-                      <p className='paragraph'>Connect a different wallet to try again</p>
-                      
-              </div>
-  );
-}
- 
+
 function burning(){
   setStatus(
     <div className="redirect-section">
@@ -159,143 +165,11 @@ function errorBurn () {
     );
   }
   
-  async function mint(){
-    minting()
-    const res = await mintToken(address);
-    console.log("ACCOUNT RESPONSE: ", res)
-    if(res.transactionHash.status == 1){
-      home()
-    } 
-    else if(res.transactionHash.transactionHash == false){
-      home()
-    }
-    else {
-      mintingError()
-    }
-  }
-
-  function minting() {
-    setStatus(
-      <div className='index-section-home'>
-        <div className='mint-section'>
-        <h2 className='heading-text h2 intro '>Select a Demo</h2>
-          <p className='paragraph demo-select'>Select a demo below to view the user experience for the corresponding Top Drawer Web3 App. You'll need to mint at least one Top Drawer Merch Club NFT before you are able to view and interact with the demos.</p>
-          <button className='cta button' disabled onClick={mint}>MINTING...</button>
-        </div>
-              <div className='demo-selector'>
-                <div className='demo-select'>
-                  <div className='demo-body'>
-                    <h3 className='heading-text h3'>Tokengate Demo</h3>
-                    <p className='paragraph demo'>Tokengate your entire Shopify store so it is only accessible to holders of your NFT.</p>
-                    <button className='cta button' onClick={verifyWallet}>VIEW DEMO</button>
-                  </div>
-                </div>
-                <div className='demo-select'>
-                  <div className='demo-body'>
-                    <h3 className='heading-text h3'>Claimer Demo</h3>
-                    <p className='paragraph demo'>Allow your holders to claim a physical product or product bundle per NFT that they hold.</p>
-                    <button className='cta button' onClick={TokenSelectClaim}>VIEW DEMO</button>
-                  </div>
-                </div>
-                <div className='demo-select'>
-                  <div className='demo-body'>
-                    <h3 className='heading-text h3'>Burn to Redeem Demo</h3>
-                    <p className='paragraph demo'>Give your holders the option to burn an NFT to redeem a physical product or product bundle.</p>
-                    <button className='cta button' onClick={TokenSelectBurn}>VIEW DEMO</button>
-                  </div>
-                </div>
-                
-                
-               
-              </div>
-              <div>
-                
-              </div>
-        </div>
-
-    );
-  }
-  function mintingError() {
-    setStatus(
-      <div className='index-section-home'>
-      <div className='mint-section'>
-      <h2 className='heading-text h2 intro '>Select a Demo</h2>
-        <p className='paragraph demo-select'>Select a demo below to view the user experience for the corresponding Top Drawer Web3 App. You'll need to mint at least one Top Drawer Merch Club NFT before you are able to view and interact with the demos.</p>
-        <h3>There was an error minting, try again</h3>
-        <button className='cta button' onClick={mint}>MINT NFT</button>
-      </div>
-            <div className='demo-selector'>
-              <div className='demo-select'>
-                <div className='demo-body'>
-                  <h3 className='heading-text h3'>Tokengate Demo</h3>
-                  <p className='paragraph demo'>Tokengate your entire Shopify store so it is only accessible to holders of your NFT.</p>
-                  <button className='cta button' onClick={verifyWallet}>VIEW DEMO</button>
-                </div>
-              </div>
-              <div className='demo-select'>
-                <div className='demo-body'>
-                  <h3 className='heading-text h3'>Claimer Demo</h3>
-                  <p className='paragraph demo'>Allow your holders to claim a physical product or product bundle per NFT that they hold.</p>
-                  <button className='cta button' onClick={TokenSelectClaim}>VIEW DEMO</button>
-                </div>
-              </div>
-              <div className='demo-select'>
-                <div className='demo-body'>
-                  <h3 className='heading-text h3'>Burn to Redeem Demo</h3>
-                  <p className='paragraph demo'>Give your holders the option to burn an NFT to redeem a physical product or product bundle.</p>
-                  <button className='cta button' onClick={TokenSelectBurn}>VIEW DEMO</button>
-                </div>
-              </div>
-              
-              
-             
-            </div>
-            <div>
-              
-            </div>
-      </div>
-
-
-    );
-  }
-
+  
   function home() {
     setStatus(
-      <div className='index-section-home'>
-        <div className='mint-section'>
-          <h2 className='heading-text h2 intro '>Select a Demo</h2>
-          <p className='paragraph demo-select'>Select a demo below to view the user experience for the corresponding Top Drawer Web3 App. You'll need to mint at least one Top Drawer Merch Club NFT before you are able to view and interact with the demos.</p>
-          <button className='cta button' onClick={mint}>MINT NFT</button>
-        </div>
-              <div className='demo-selector'>
-                <div className='demo-select'>
-                  <div className='demo-body'>
-                    <h3 className='heading-text h3'>Tokengate Demo</h3>
-                    <p className='paragraph demo'>Tokengate your entire Shopify store so it is only accessible to holders of your NFT.</p>
-                    <button className='cta button demo-select' onClick={verifyWallet}>VIEW DEMO</button>
-                  </div>
-                </div>
-                <div className='demo-select'>
-                  <div className='demo-body'>
-                    <h3 className='heading-text h3'>Claimer Demo</h3>
-                    <p className='paragraph demo'>Allow your holders to claim a physical product or product bundle per NFT that they hold.</p>
-                    <button className='cta button demo-select' onClick={TokenSelectClaim}>VIEW DEMO</button>
-                  </div>
-                </div>
-                <div className='demo-select'>
-                  <div className='demo-body'>
-                    <h3 className='heading-text h3'>Burn to Redeem Demo</h3>
-                    <p className='paragraph demo'>Give your holders the option to burn an NFT to redeem a physical product or product bundle.</p>
-                    <button className='cta button demo-select' onClick={TokenSelectBurn}>VIEW DEMO</button>
-                  </div>
-                </div>
-                
-                
-               
-              </div>
-              <div>
-                
-              </div>
+      <div>
+                <DisplayToBurn productPage={ProductPagetoBurn} error={errorFunction} account={ address }></DisplayToBurn>
         </div>
     );
   }

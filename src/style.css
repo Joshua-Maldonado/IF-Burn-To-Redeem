@@ -27,27 +27,73 @@
     font-family: pt-root-ui-medium !important;
     font-weight: 500;
   } */
+
+  @keyframes rainbow {
+    0% {
+        background-position: 0 50%
+    }
+
+    to {
+        background-position: 400% 50%
+    }
+}
+
+body {
+    background-color: #B4CADA;
+    color: white;
+    margin: 0;
+}
 img.logo-img {
     max-width: 155px;
+    width: 3rem;
 }
-.Container--c12h69.primary {
-    background-color: black !important;
-    border-radius: 0;
+h1, h2, h3, h4, h5 {
+  font-weight: 700 !important;
+  color: rgb(250 230 1) !important;
+  font-family: "fatfrank", sans-serif;
+}
+.main-content h1, h2, h3, h4, h5 {
+  font-family: "fatfrank", sans-serif !important;
+}
+
+#__CONNECTKIT__ h1, h2, h3, h4, h5 {
+  color: white !important;
+}
+#__CONNECTKIT__ h1, h2, h3, h4, h5 {
+  color: white !important;
+}
+.not-nav .Container--c12h69.primary {
+    background-color: rgb(250 230 1) !important;
+    border-radius: 9999px;
     display: flex;
     justify-content: center;
-    background-color: black;
-    color: white;
+    background-color: rgb(250 230 1);
+    color: rgb(0, 0, 0);
     border: none;
     margin-left: auto;
     margin-right: auto;
-    padding: 25px 100px;
     font-family: var(--pt-root-ui) !important;
     font-weight: 700;
     text-transform: uppercase;
-    font-size: 0.7rem;
+    font-size: 1rem;
+    font-family: "fatfrank", sans-serif !important;
     height: 100%;
     padding-top: 0;
     padding-bottom: 0;
+    letter-spacing: 0.05em;
+    
+}
+.not-nav .Container--c12h69.primary div div{
+
+  font-family: "fatfrank", sans-serif !important;
+}
+.not-nav .Container--c12h69.primary div {
+  padding: 25px 40px;
+}
+.wallet-button .Container--c12h69.primary {
+    padding: 0 10px;
+    width: auto !important;
+    background-color: #1075fd !important;
 }
 .IconContainer--1s3i64j {
     display: none;
@@ -85,22 +131,20 @@ p.paragraph.welcome {
     justify-content: center;
 }
 .wallet-button {
-    position: absolute;
     top: 0;
     right: 25px;
     height: 100%;
 }
 .page-header {
-    width: 100%;
     display: flex;
     justify-content: center;
-    padding: 25px 0;
+    padding: 1.75rem;
 }
 .header-content {
     position: relative;
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 .page-section {
     width: 100%;
@@ -115,18 +159,22 @@ p.paragraph.welcome {
     align-items: center;
 }
 button.cta.button {
-    background-color: black;
-    color: white;
-    border: none;
-    margin-top:15px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 1rem 1.7rem;
-    font-size: 10px;
-    line-height: 11px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  background-color: rgb(250 230 1) !important;
+  border-radius: 9999px;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(250 230 1);
+  color: rgb(0, 0, 0);
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 15px 40px;
+  font-family: "fatfrank", sans-serif !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1rem;
+  margin-top: 15px;
+  letter-spacing: 0.05em;
 }
 .demo-selector {
     display: flex;
@@ -154,10 +202,30 @@ p.paragraph.demo {
 }
 
 .wallet-button button:hover .Container--c12h69.primary {
-    border-radius: 0 !important;
+  transform: scale(1.025);
 }
 button:hover .Container--c12h69.primary {
-    border-radius: 0 !important;
+  transform: scale(1.025);
+}
+.not-nav .wallet-button button:hover .Container--c12h69.primary {
+  border-radius: 9999px !important;
+  background-size: 400% 200%;
+  background-image: linear-gradient(90deg,#32fe31,#33f7f5,#4779ed,#9263d2,#ff0b00,#9263d2,#4779ed,#33f7f5);
+  animation: rainbow 5s linear infinite;
+
+}
+.not-nav button:hover .Container--c12h69.primary {
+  border-radius: 9999px !important;
+  background-size: 400% 200%;
+  background-image: linear-gradient(90deg,#32fe31,#33f7f5,#4779ed,#9263d2,#ff0b00,#9263d2,#4779ed,#33f7f5);
+  animation: rainbow 5s linear infinite;
+
+}
+button.cta.button:hover {
+  background-size: 400% 200%;
+  background-image: linear-gradient(90deg,#32fe31,#33f7f5,#4779ed,#9263d2,#ff0b00,#9263d2,#4779ed,#33f7f5);
+  animation: rainbow 5s linear infinite;
+  color: white;
 }
 .index-section-subcontent {
     display: flex;
@@ -188,7 +256,7 @@ h3.nft-title {
     text-align: center;
     margin-top: 10px;
     margin-bottom: 0;
-    font-size: 14px;
+    font-size: 1.5rem;
 }
 .buttonParent {
     display: flex;
@@ -217,7 +285,7 @@ p.paragraph.product-page {
     padding-bottom: 60px;
       max-width: 1000px;
       margin-bottom: 75px;
-      border-bottom: 1px solid rgb(0, 0, 0);
+      border-bottom: 1px solid rgb(255, 255, 255);
       margin: auto;
       
   }
@@ -445,17 +513,20 @@ p.paragraph.product-page {
   }
   .input-parent label {
     margin-bottom: 10px;
-    color: rgb(0, 0, 0); 
+    color: rgb(255, 255, 255); 
   }
   .input-div-parent {
    
     width: 100%;
   
     display: flex;
-    border: 1px solid rgb(0, 0, 0);
+    border: 1px solid rgb(255, 255, 255);
   }
   .input-div input {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+  }
+  .input-div input::placeholder {
+    color: rgba(0, 0, 0, 0.223);
   }
   div.checkout-form button {
     background-color: #ffffff;
@@ -465,7 +536,7 @@ p.paragraph.product-page {
     margin-top: 35px;
     height: auto;
       max-height: none !important;
-      padding: 20px 60px !important;
+      padding: 15px 40px !important;
   }
   #status div.checkout-form input::-internal-autofill-selected {
     background-color: transparent !important;
@@ -500,12 +571,12 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  border: 1px solid rgb(255, 255, 255) !important;
-  -webkit-text-fill-color: rgb(0, 0, 0) !important;
-  box-shadow:0 0 0px 1000px rgb(255, 255, 255) inset !important;
-  -webkit-box-shadow: 0 0 0px 1000px rgb(255, 255, 255) inset !important;
+  border: 1px solid rgba(255, 255, 255, 0) !important;
+  -webkit-text-fill-color: rgb(255, 255, 255) !important;
+  box-shadow:0 0 0px 1000px rgba(255, 255, 255, 0) inset !important;
+  -webkit-box-shadow: 0 0 0px 1000px rgba(255, 255, 255, 0) inset !important;
   transition: background-color 5000s ease-in-out 0s !important;
-  color: black !important;
+  color: rgb(255, 255, 255) !important;
 }
 h1.heading.mobile {
     text-align: center;
@@ -561,14 +632,16 @@ p.paragraph.demo-select {
     max-width: 660px;
 }
 h1.heading.mobile{
-    font-family: var(--pt-root-ui) !important;
+    font-family: "fatfrank", sans-serif !important;
     font-weight: 500;
-    font-size: 32px;
+    font-size: 2.25rem !important;
+    line-height: 2.5rem !important;
 }
 h2.waiting-text{
-    font-family: var(--pt-root-ui) !important;
+    font-family: "fatfrank", sans-serif !important;
     font-weight: 500;
-    font-size: 32px;
+    font-size: 2.25rem !important;
+    line-height: 2.5rem !important;
 }
 .nfts-parent.no-tokens {
     flex-direction: column;
@@ -585,10 +658,7 @@ button.ThemeContainer--hv3pcf {
     height: 100%;
 }
 div#home-button {
-    position: absolute;
-    background-color: black;
-    top: 0;
-    left: 25px;
+    
     height: 100%;
     width: auto;
     cursor: pointer;
@@ -618,8 +688,9 @@ p.size-chart-button {
 h5.title-subheading {
   margin: 0;
   font-weight: 700;
-  font-size: 11px;
+  font-size: 1.35rem;
   line-height: 21px;
+  letter-spacing: 1px;
 }
 h1.heading.mobile.product.title-product {
   margin-bottom: 6px;
@@ -643,6 +714,37 @@ button#walletButton.claim {
 }
 .modal-size-chart h1{
   text-align: center;
+}
+.top-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 6rem;
+}
+.top-section h1{
+  font-size: 8rem;
+  line-height: 1;
+  margin: 0;
+}
+.top-section span {
+  position: absolute;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  
+}
+
+.top-section h2{
+  font-size: 3rem;
+  line-height: 1;
+  margin: 0;
+  color: rgb(250 230 1) !important;
+}
+h2.heading-text.h2 {
+  margin: 0;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  color: #fae601 !important;
 }
 
 @media screen and (max-width: 769px) {
