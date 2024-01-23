@@ -315,32 +315,32 @@ server.post('/neworder', cors(corsOptions), jsonParser, async function(req, res)
   var sendContent = { "content": req.body, "code": 412234};
   console.log(sendContent);
   var origin = req.get('sec-fetch-site');
-  
-    if(origin == "same-origin"){
+  res.status(200).send(JSON.stringify({success: true}))
+  //   if(origin == "same-origin"){
 
-  await fetch('https://webhooks.runalloy.com/654034eec6ca7bd010a83087', {
-        method: 'POST',
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(sendContent),
-      })
-         .then((response) => response.json())
-         .then((data) => {
-            console.log(data);
-            // Handle data
-            //this.props.buttonFunction();
-            res.status(200).send(JSON.stringify({success: true, data: data}))
-         })
-         .catch((err) => {
-            console.log(err.message);
-            //this.props.errorFunction();
-            res.status(400).send(JSON.stringify({success: false}))
-         });
-        }
-        else{
-          res.status(200).send(JSON.stringify({success: false, tokens: response}))
-        }
+  // await fetch('https://webhooks.runalloy.com/654034eec6ca7bd010a83087', {
+  //       method: 'POST',
+  //       headers: {
+  //         "Content-Type": "application/json"
+  //       },
+  //       body: JSON.stringify(sendContent),
+  //     })
+  //        .then((response) => response.json())
+  //        .then((data) => {
+  //           console.log(data);
+  //           // Handle data
+  //           //this.props.buttonFunction();
+  //           res.status(200).send(JSON.stringify({success: true, data: data}))
+  //        })
+  //        .catch((err) => {
+  //           console.log(err.message);
+  //           //this.props.errorFunction();
+  //           res.status(400).send(JSON.stringify({success: false}))
+  //        });
+  //       }
+  //       else{
+  //         res.status(200).send(JSON.stringify({success: false, tokens: response}))
+  //       }
 })
 
 server.get('/add/:hash/:address/:token_id', function(req, res) {
