@@ -31,7 +31,7 @@ class ProductFormBurn extends React.Component {
         
         
         console.log("TOKEN ID CLICKED HERE: "+this.props.tokenid + "state is: "+this.state.token_id)
-        const big = this.props.tokenid > 40;
+        const big = this.props.tokenid >= 108;
         if(big == false){
             this.setState({['description']: <div><div><p className="sub-heading">Invisible Friends Physical Collectible - Tall 24"</p></div>
             <div>

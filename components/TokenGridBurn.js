@@ -34,8 +34,14 @@ async function GetTokenBurnData(productPage) {
             let customName = tokenName.tokenId;
             let type = "";
             
-             
-              image.src = "Toy_avatar.webp";
+            const big = this.props.tokenid >= 108;
+            if(big == false ){
+              image.src = "IF_Toy_Large.mp4.gif";
+            }
+            else{
+              image.src = "IF_Toy_Small.mp4.gif";
+            }
+              
             
             
 
