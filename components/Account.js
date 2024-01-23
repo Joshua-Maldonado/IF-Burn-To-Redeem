@@ -22,11 +22,11 @@ export default function Account() {
   useEffect(() => {
     const handleConnectorUpdate = ({account, chain}) => {
         if (account) {
-          console.log('new account', account)
+          
           setLogged(account)
           home();
         } else if (chain) {
-          console.log('new chain', chain)
+          
         }
       }
   
@@ -53,54 +53,7 @@ export default function Account() {
     }, [activeConnector])
 
   
-  // function ProductPageClaim(tokenid){
-  //   setStatus(
-  //     <div>
-  //       <ProductPage tokenid={tokenid} error={errorFunction} wallet={address}></ProductPage>
-  //     </div>
-  //   );
-  // }
-
-  // function verifyWallet(){
-
-  //   var thisAddress = address
-  //    console.log(" Function account: "+ address)
-     
-    
-  //    setStatus(
-  //      <div>
-  //        <VerifyAccout address={address} approve={validWallet} deny={denyWallet}></VerifyAccout>
-  //      </div>
-  //    );
-     
-  //  }
-
-//   function TokenSelectClaim() {
   
-//     setStatus(
-//       <div>
-//                 <DisplayTokens productPage={ProductPageClaim} error={errorFunction} account={ address }></DisplayTokens>
-//         </div>
-//     );
-// }
-// function validWallet(){
-//   setStatus(
-//     <div className='index-section-subcontent'>
-//                       <h2 className='heading-text h2'>Successful Verification</h2>
-//                       <p className='paragraph'>Looks like you own one or more Top Drawer Merch Club NFTs. Click the button below to shop the members-only Top Drawer Shop.</p>
-//                       <button className='cta button big-btn'>Shop Now</button>
-//               </div>
-//   );
-// }
-// function denyWallet(){
-//   setStatus(
-//     <div className='index-section-subcontent'>
-//                       <h2 className='heading-text h2'>Denied</h2>
-//                       <p className='paragraph'>Connect a different wallet to try again</p>
-                      
-//               </div>
-//   );
-// }
  
 
   

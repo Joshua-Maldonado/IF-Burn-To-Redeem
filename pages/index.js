@@ -10,7 +10,7 @@ function Page() {
   
  if(isConnected){
   
-  console.log("PAGE: "+JSON.stringify(isConnected))
+  
   return (
     <div className='body-section'>
       <div className='page-header'>

@@ -7,7 +7,6 @@ import ProductFormBurn from './ProductFormBurn'
 export default function ProductPageBurn(props) {
     function toggleSizeChart() {
         var target = document.getElementById("size-chart-target");
-        //console.log("Target: "+target.classList.contains("hidden"));
         if(target.classList.contains("hidden")){
           target.classList.remove("hidden");
         }
@@ -15,7 +14,6 @@ export default function ProductPageBurn(props) {
 
      function closeSizeChart() {
         var target = document.getElementById("size-chart-target");
-        //console.log("Target: "+target.classList.contains("hidden"));
         if(target.classList.contains("hidden")){
           
         }
@@ -27,8 +25,7 @@ export default function ProductPageBurn(props) {
       function runError() {
         props.error()
       }
-      
-      console.log("Token ID Clicked: "+props.tokenid)
+
 
   return (
     <div  className="verified-parent">

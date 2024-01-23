@@ -14,7 +14,7 @@ async function GetTokenBurnData(productPage) {
   waitingParent.appendChild(waitingText);
     
     const data = await getTokensBurn(address)
-    console.log("DATA CAME HERE: "+ JSON.stringify(data))
+    
     if(data){
       if(data.length >= 1){
         const list = document.createElement("div");
@@ -22,7 +22,7 @@ async function GetTokenBurnData(productPage) {
     for (const nft of data) {
 
             let tokenName = nft;
-            console.log("This NFT: ++ " + JSON.stringify(nft));
+            
 
             let childSuper = document.createElement("div");
             childSuper.classList.add('nft-superchild');
@@ -63,7 +63,6 @@ async function GetTokenBurnData(productPage) {
 
             button.innerText = "BEGIN BURN"
             button.addEventListener("click", function () {
-              console.log("clicked this button")
               productPage(nft.tokenId)
             });
 
