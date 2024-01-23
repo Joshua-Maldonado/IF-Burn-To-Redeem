@@ -29,6 +29,7 @@ class ProductFormBurn extends React.Component {
       componentDidMount() {
         const big = this.props.tokenid >= 108;
         if(big == false){
+            this.setState({['token_img']: <img src="IF_Toy_Large.mp4.gif"  />});
             this.setState({['description']: <div><div><p className="sub-heading">Invisible Friends Physical Collectible - Tall 24"</p></div>
             <div>
             <ul>
@@ -73,6 +74,7 @@ class ProductFormBurn extends React.Component {
             state: '',
             country: '',
             postcode: '',
+            token_img: <img src="IF_Toy_Small.mp4.gif"  />,
             description: <div>
                             <p className="sub-heading">Invisible Friends Physical Collectible - Short 8"</p>
                             <div>
@@ -348,7 +350,12 @@ class ProductFormBurn extends React.Component {
             <div className="product-container burn-container">
                 <div className="split-parent">
                 <div className="split-child">
-                <img src="Toy_avatar.webp"  />
+                    <div class="imgsection_parent">
+                        <div class="img_element">
+                            {this.state.token_img}
+                        </div>
+                    </div>
+                    
                 </div>
                 <div className="split-child">
                     <h1  className="heading mobile product title-product third">Physical Physical Collectible Claim</h1>

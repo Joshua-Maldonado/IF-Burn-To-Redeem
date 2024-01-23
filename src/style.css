@@ -751,8 +751,32 @@ h2.heading-text.h2 {
   line-height: 2.5rem;
   color: #fae601 !important;
 }
-
+.split-child .img_element img {
+  width: 100%;
+  height: auto;
+  border: 20px solid white;
+  border-radius: 500px;
+}
+.imgsection_parent {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.img_element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 @media screen and (max-width: 769px) {
+  .split-child .img_element img {
+    border: 10px solid white;
+  }
+  .imgsection_parent {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
   .demo-selector {
       flex-wrap: wrap;
   }
