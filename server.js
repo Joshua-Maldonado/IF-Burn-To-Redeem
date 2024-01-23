@@ -412,7 +412,8 @@ server.get('/mint/:address', function(req, res) {
 
   server.all('*', cors(), (req, res) => {
     console.log("PINGED *");
-    
+    var origin = req.get('sec-fetch-site');
+    console.log("THE ORIGIN: "+origin)
     return handle(req, res)
   })
 
