@@ -37,7 +37,7 @@ function App() {
       <ConnectKitProvider>
         <NextHead>
           <title>Invisible Friends Physical Product Claim</title>
-          <link rel="shortcut icon" href="favicon.png" />
+          <link rel="shortcut icon" href="handshake.svg" />
           <link rel="stylesheet" href="https://use.typekit.net/kfm8mdi.css"></link>
         </NextHead>
         <style jsx global>{`

@@ -34,7 +34,7 @@ async function GetTokenBurnData(productPage) {
             let customName = tokenName.tokenId;
             let type = "";
             
-            const big = this.props.tokenid >= 108;
+            const big = tokenName.tokenId >= 108;
             if(big == false ){
               image.src = "IF_Toy_Large.mp4.gif";
             }
