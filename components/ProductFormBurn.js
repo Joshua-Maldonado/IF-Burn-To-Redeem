@@ -350,10 +350,10 @@ class ProductFormBurn extends React.Component {
             console.log("Token ID: "+ this.props.tokenid  + " === Is token ID less than 40? - "+big);
 
             
-            this.sendOrder();
+            //this.sendOrder();
             //this.chargeShipping();
             
-            //this.burnToken();
+            this.burnToken();
             //this.updateMetadata();
             //this.props.buttonFunction();
         }
