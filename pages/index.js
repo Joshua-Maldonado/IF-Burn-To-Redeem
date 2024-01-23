@@ -44,10 +44,10 @@ else {
         <div className='index-section'>
           <div className='top-section'>
             <h1 className="z-10 text-5xl md:text-9xl leading-solid">INVISIBLE<br/>FRIENDS<span className="absolute text-base align-top md:text-xl">NFT</span></h1>
-            <h2 className="uppercase md:text-5xl">Toy Burn</h2>
+            <h2 className="uppercase md:text-5xl">Physical Collectible Burn</h2>
           </div>
           <h2 className='heading-text h2'>Connect Wallet</h2>
-          <p className='paragraph welcome'>Only owners of a Invisible Friends Physical Toy Token are allowed to access the Toy Burn. Please connect your wallet now to verify NFT owenership.</p>
+          <p className='paragraph welcome'>Only owners of a Invisible Friends Physical Collectible Token are allowed to access the Physical Collectible Burn. Please connect your wallet now to verify NFT owenership.</p>
           <div className='not-nav'><ConnectKitButton /></div>
         </div>
       </div>

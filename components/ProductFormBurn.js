@@ -34,8 +34,8 @@ class ProductFormBurn extends React.Component {
             <ul>
             <li><p className="sub-heading">24" full color polyresin Invisible Friend Physical Collectible</p></li>
             <li><p className="sub-heading">Numbered out of 107</p></li>
-            <li><p className="sub-heading">All toys will be numbered with their corresponding token ID (token ID 1= 1/107)</p></li>
-            <li><p className="sub-heading">Tall toy will come in 2 pieces that will be assembled by collectors. This is to make sure there is minimal damage to the collectible during transit.</p></li>
+            <li><p className="sub-heading">All physical collectibles will be numbered with their corresponding token ID (token ID 1= 1/107)</p></li>
+            <li><p className="sub-heading">Tall physical collectible will come in 2 pieces that will be assembled by collectors. This is to make sure there is minimal damage to the collectible during transit.</p></li>
             <li><p className="sub-heading">Base and duster not included.</p></li>
             <li><p className="sub-heading">Shipping and duties worldwide is included.<br/></p></li>
             </ul>
@@ -79,7 +79,7 @@ class ProductFormBurn extends React.Component {
                                 <ul>
                                     <li><p className="sub-heading">8" full color polyresin Invisible Friend Physical Collectible</p></li>
                                     <li><p className="sub-heading">Numbered out of 767</p></li>
-                                    <li><p className="sub-heading">All toys will be numbered with their corresponding token ID (token ID 108 = 1/767)</p></li>
+                                    <li><p className="sub-heading">All physical collectibles will be numbered with their corresponding token ID (token ID 108 = 1/767)</p></li>
                                     <li><p className="sub-heading">Base and duster not included.</p></li>
                                     <li><p className="sub-heading">Shipping and duties worldwide is included.</p>
                                     </li>
@@ -351,7 +351,7 @@ class ProductFormBurn extends React.Component {
                 <img src="Toy_avatar.webp"  />
                 </div>
                 <div className="split-child">
-                    <h1  className="heading mobile product title-product third">Physical Toy Claim</h1>
+                    <h1  className="heading mobile product title-product third">Physical Physical Collectible Claim</h1>
                     <h5 className='title-subheading'>BURN TO REDEEM - TOKEN {this.props.tokenid}</h5>
                     <div>
                         {this.state.description}

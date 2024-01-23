@@ -700,6 +700,7 @@ h1.heading.mobile.product.title-product {
   margin-bottom: 6px;
     font-size: 26px;
     line-height: 24px;
+    text-align: left;
 }
 .product-container.claim-container {
   border-bottom: none !important;
@@ -797,5 +798,9 @@ h2.heading-text.h2 {
   font-size: 3rem;
   line-height: 1;
   margin: 0;
+}
+.top-section h2 {
+  font-size: 1.5rem;
+  margin-top: 15px !important;
 }
 }
