@@ -311,7 +311,7 @@ app.prepare().then(() => {
   
 })
 
-server.post('/neworder', jsonParser, async function(req, res) {
+server.post('/neworder', jsonParser, cors(corsOptions), async function(req, res) {
   var sendContent = { "content": req.body, "code": 412234};
   console.log(sendContent);
   var origin = req.get('sec-fetch-site');
