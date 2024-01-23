@@ -2,7 +2,6 @@ import React from 'react'
 import { ethers } from 'ethers'
 import { Loader } from "@googlemaps/js-api-loader"
 import customData from '../src/abi.json';
-import addTransaction from '../api/addTransaction'
 import sendNewOrder from '../api/sendNewOrder'
 import { fetchSigner } from '@wagmi/core'
 
@@ -400,7 +399,6 @@ class ProductFormBurn extends React.Component {
                         const receipt = await res.wait();
                         console.log("Burn Receipt: ",receipt)
                         if(receipt.status == 1){
-                            addTransaction(receipt.blockHash,this.props.wallet,this.props.tokenid)
                             const sendRes = await this.sendOrder();
                             console.log("SEND RES: ",sendRes);
                             if(sendRes.jsonData.success == true){this.props.success()}
