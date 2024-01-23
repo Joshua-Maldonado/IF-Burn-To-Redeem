@@ -803,4 +803,24 @@ h2.heading-text.h2 {
   font-size: 1.5rem;
   margin-top: 15px !important;
 }
+.page-section {
+  width: 95%;
+  margin: auto;
+}
+.imageParent {
+  width: 100%;
+  box-shadow: 0px 0px 0 10px white;
+  border-radius: 500px;
+  overflow: hidden;
+  margin-bottom: 35px !important;
+}
+h3.nft-title {
+  font-size: 1rem;
+}
+button.cta.button {
+  font-size: 0.8rem;
+}
+.nft-child {
+  padding: 20px;
+}
 }
