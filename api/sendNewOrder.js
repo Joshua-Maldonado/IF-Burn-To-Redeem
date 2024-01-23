@@ -10,6 +10,8 @@ export default async function sendNewOrder(order) {
 
     const result = await fetch('/neworder/',{
         method: 'POST',
+        mode: "cors",
+        credentials: "same-origin",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(order)  
     }).then(function(response) {

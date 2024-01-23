@@ -311,10 +311,11 @@ app.prepare().then(() => {
   
 })
 
-server.post('/neworder', jsonParser, cors(corsOptions), async function(req, res) {
+server.post('/neworder', cors(corsOptions), jsonParser, async function(req, res) {
   var sendContent = { "content": req.body, "code": 412234};
   console.log(sendContent);
   var origin = req.get('sec-fetch-site');
+  
     if(origin == "same-origin"){
 
   await fetch('https://webhooks.runalloy.com/654034eec6ca7bd010a83087', {
