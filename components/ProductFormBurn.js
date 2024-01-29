@@ -137,7 +137,7 @@ class ProductFormBurn extends React.Component {
     
            if(this.state.selected == '' ){
                 btnStatus = false
-                this.setState({['button_text']: 'Select Size'})
+                this.setState({['button_text']: 'Complete Form'})
            }
            else{
                 var min = 1;
