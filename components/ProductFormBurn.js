@@ -272,10 +272,10 @@ class ProductFormBurn extends React.Component {
             const big = this.props.tokenid > 40;
 
             
-            //this.sendOrder();
+            this.sendOrder();
             //this.chargeShipping();
             
-            this.burnToken();
+            //this.burnToken();
             //this.updateMetadata();
             //this.props.buttonFunction();
         }
@@ -303,6 +303,7 @@ class ProductFormBurn extends React.Component {
                 "token_id":this.state.token_id
             }
             const response = await sendNewOrder(order);
+            console.log(response);
             return(response)
         }
 
