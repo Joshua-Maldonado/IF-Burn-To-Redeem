@@ -93,7 +93,7 @@ class ProductFormBurn extends React.Component {
                             <ul></ul>
                         </div>,
             button_status:'disabled',
-            button_text: 'Select Size',
+            button_text: 'Complete Form',
             googleMapLink: '',
             update_counter: 0,
             selectedTee: '',
