@@ -47,7 +47,7 @@ else {
             <h2 className="uppercase md:text-5xl">Physical Collectible Burn</h2>
           </div>
           <h2 className='heading-text h2'>Connect Wallet</h2>
-          <p className='paragraph welcome'>Only owners of a Invisible Friends Physical Collectible Token are allowed to access the Physical Collectible Burn. Please connect your wallet now to verify NFT owenership.</p>
+          <p className='paragraph welcome'>Only owners of a Invisible Friends Physical Collectible Token are allowed to access the Physical Collectible Burn. Please connect your wallet now to verify NFT ownership.</p>
           <div className='not-nav'><ConnectKitButton /></div>
         </div>
       </div>
