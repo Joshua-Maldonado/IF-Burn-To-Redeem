@@ -46,7 +46,7 @@ app.prepare().then(() => {
   var jsonParser = bodyParser.json()
 
 
-  var allowedOrigins = ['https://burn.invisiblefriends.io/','https://if-test-663ff35c9458.herokuapp.com/','http://localhost:4000'];
+  var allowedOrigins = ['https://if-test-663ff35c9458.herokuapp.com/','https://burn.invisiblefriends.io/','http://localhost:4000'];
   server.use(cors({
     origin: function(origin, callback){
       // allow requests with no origin 
