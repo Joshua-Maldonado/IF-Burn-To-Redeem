@@ -46,7 +46,7 @@ app.prepare().then(() => {
   var jsonParser = bodyParser.json()
 
 
-  var allowedOrigins = ['https://if-test-663ff35c9458.herokuapp.com','https://burn.invisiblefriends.io/','http://localhost:4000'];
+  var allowedOrigins = ['https://if-test-663ff35c9458.herokuapp.com','https://burn.invisiblefriends.io','http://localhost:4000'];
   server.use(cors({
     origin: function(origin, callback){
       // allow requests with no origin 
@@ -62,7 +62,7 @@ app.prepare().then(() => {
   }));
   
   var corsOptions = {
-    origin: 'https://if-test-663ff35c9458.herokuapp.com',
+    origin: 'https://burn.invisiblefriends.io',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
   }
 
