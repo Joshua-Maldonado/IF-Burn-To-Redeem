@@ -62,7 +62,7 @@ app.prepare().then(() => {
   }));
   
   var corsOptions = {
-    origin: 'https://invisible-friends-burn-a5ff3ad67daf.herokuapp.com',
+    origin: 'https://if-test-663ff35c9458.herokuapp.com/',
     optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
   }
 
