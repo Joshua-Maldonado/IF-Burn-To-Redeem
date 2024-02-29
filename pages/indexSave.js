@@ -24,8 +24,8 @@ function Page() {
             <h1 className="z-10 text-5xl md:text-9xl leading-solid">INVISIBLE<br/>FRIENDS<span className="absolute text-base align-top md:text-xl">NFT</span></h1>
             <h2 className="uppercase md:text-5xl">Physical Collectible Burn</h2>
           </div>
-          <h2 className='heading-text h2'>Coming Soon</h2>
-          
+          <h2 className='heading-text h2'>Claim Closed</h2>
+          <a href="https://shop.invisiblefriends.io/" class="nft-button">Shop Invisible Friends Merch</a>
         </div>
       </div>
       <div className='footer'>

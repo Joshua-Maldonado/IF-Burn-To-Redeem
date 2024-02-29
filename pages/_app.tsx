@@ -2,7 +2,7 @@ import { ConnectKitProvider } from 'connectkit'
 import NextHead from 'next/head'
 import { WagmiConfig } from 'wagmi'
 import { client } from '../src/wagmi'
-import Page from './index'
+import Page from './indexSave'
 import localFont from 'next/font/local'
 import '../src/style.css'
 
