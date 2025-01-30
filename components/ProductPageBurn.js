@@ -30,7 +30,7 @@ export default function ProductPageBurn(props) {
   return (
     <div  className="verified-parent">
      <div className="redirect-section">
-        <ProductFormBurn success={props.success} burning={props.burning} wallet={props.wallet} tokenid={props.tokenid} error={props.error}></ProductFormBurn> 
+        <ProductFormBurn success={props.success} burning={props.burning} wallet={props.wallet} tokenid={props.tokenid} error={props.error} ></ProductFormBurn> 
          {/* <img src="size-chart.png" loading="lazy" sizes=""  alt="" className="product-img"></img> */}
       
         

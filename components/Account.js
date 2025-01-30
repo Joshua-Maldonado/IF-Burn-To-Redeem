@@ -113,7 +113,7 @@ function errorBurn () {
   function TokenSelectBurn(){
     setStatus(
       <div>
-                <DisplayToBurn productPage={ProductPagetoBurn} error={errorFunction} account={ address }></DisplayToBurn>
+                <DisplayToBurn productPage={ProductPagetoBurn} error={errorFunction} account={ address } connector={activeConnector} ></DisplayToBurn>
         </div>
     );
   }
@@ -122,7 +122,7 @@ function errorBurn () {
   function home() {
     setStatus(
       <div>
-                <DisplayToBurn productPage={ProductPagetoBurn} error={errorFunction} account={ address }></DisplayToBurn>
+                <DisplayToBurn productPage={ProductPagetoBurn} error={errorFunction} account={ address } connector={activeConnector}></DisplayToBurn>
         </div>
     );
   }
